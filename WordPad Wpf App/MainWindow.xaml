@@ -1,0 +1,101 @@
+﻿<Window x:Class="WordPad_Wpf_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WordPad_Wpf_App"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="Yellow" Offset="0.0" />
+                    <GradientStop Color="#FF19DAFF" Offset="0.884" />
+                    <GradientStop Color="#FF0336B3" Offset="0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <DockPanel>
+                <Menu DockPanel.Dock="Top" Height="25" VerticalAlignment="Top" Background="Transparent">
+
+
+
+                    <MenuItem Header="File" FontSize="13" FontFamily="Bahnschrift Light" Margin="3" >
+                        <MenuItem Header="Save"/>
+                    </MenuItem>
+                    <MenuItem Header="Home"  FontSize="13" FontFamily="Bahnschrift Light" Margin="3"/>
+                    <MenuItem Header="Insert" FontSize="13" FontFamily="Bahnschrift Light" Margin="3"/>
+                    <MenuItem Header="Format" FontSize="13" FontFamily="Bahnschrift Light" Margin="3"/>
+                    <MenuItem Header="View" FontSize="13" FontFamily="Bahnschrift Light" Margin="3"/>
+                    <MenuItem Header="Help" FontSize="13" FontFamily="Bahnschrift Light" Margin="3"/>
+
+
+                </Menu>
+            </DockPanel>
+            <!--<Line Stretch="Fill"  X2="150" Margin="15,10,0,50" Height="15" Width="800" HorizontalAlignment="Right" Stroke="#FF8787A4" />-->
+            <Button x:Name="Bold_btn" Height="25" Width="25" Margin="10,27,740,15" Content="B" FontSize="20" Foreground="White" Background="Transparent" BorderBrush="Transparent" Click="Bold_btn_Click"/>
+
+            <Button x:Name="Italic_btn" Height="25" Width="25" Margin="10,27,640,15" Content="I" FontSize="20" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontStyle="Italic" Click="Italic_btn_Click"/>
+
+            <Button x:Name="ULine_btn" Height="25" Width="25" Margin="10,27,540,10" Background="Transparent" BorderBrush="Transparent" Click="ULine_btn_Click" >
+                <Button.Content>
+                    <Image Source="/underLine-icon.png"/>
+                </Button.Content>
+            </Button>
+
+            <Button x:Name="S_btn" Height="25" Width="25" Margin="10,27,440,17" Background="Transparent" BorderBrush="Transparent"  Content="S"  Foreground="White" FontSize="20"  />
+
+            <ComboBox Name="fontStyle_comboBox" Width="70" Height="25" Margin="10,27,260,12">
+                <ComboBoxItem Content="Italic" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Normal" Selected="ComboBoxItem_Selected_1"/>
+                <ComboBoxItem Content="Oblique" Selected="ComboBoxItem_Selected_2"/>
+                <ComboBoxItem Content="Bold" Selected="ComboBoxItem_Selected_3"/>
+            </ComboBox>
+
+                <ComboBox Name="fontSIze_comboBox" Width="70" Height="25" Margin="290,27,260,12" >
+                    <ComboBoxItem Content="12"/>
+                    <ComboBoxItem Content="13"/>
+                    <ComboBoxItem Content="14"/>
+                    <ComboBoxItem Content="15"/>
+                    <ComboBoxItem Content="16"/>
+                    <ComboBoxItem Content="17"/>
+                    <ComboBoxItem Content="18"/>
+                    <ComboBoxItem Content="19"/>
+                    <ComboBoxItem Content="20"/>
+                    <ComboBoxItem Content="21"/>
+                    <ComboBoxItem Content="22"/>
+                    <ComboBoxItem Content="23"/>
+                </ComboBox>
+
+            <Button x:Name="Color_btn" Height="35" Width="35" Margin="10,27,-200,17" Background="Transparent" BorderBrush="Transparent">
+
+                <Button.Content>
+                    <Image Source="/color-icon.png"/>
+                </Button.Content>
+                
+            </Button>
+
+
+
+
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <ScrollViewer>
+                <RichTextBox x:Name="my_txtBox" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+
+                </RichTextBox>
+            </ScrollViewer>
+            
+            
+        </Grid>
+
+    </Grid>
+</Window>

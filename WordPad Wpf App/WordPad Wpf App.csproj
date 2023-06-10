@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>WordPad_Wpf_App</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="color-icon.png" />
+    <None Remove="underLine-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="color-icon.png" />
+    <Resource Include="underLine-icon.png" />
+  </ItemGroup>
+
+</Project>
